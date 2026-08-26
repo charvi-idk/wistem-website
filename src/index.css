@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- Color tokens: Y2K hot-pink / near-black, pixel-badge palette ---- */
+  --color-ink: #1a0e17;         /* near-black, primary text */
+  --color-iris: #ff2f92;        /* primary brand hot pink (was purple) */
+  --color-iris-dark: #c8137a;   /* hover/darker */
+  --color-violet-deep: #170a13; /* dark sections, footer, hero — near-black plum */
+  --color-lilac: #ffe2f0;       /* soft pink tint bg */
+  --color-lilac-line: #ffb3d9;  /* borders on lilac */
+  --color-bloom: #ff5cae;       /* pink accent */
+  --color-bloom-light: #ffd6ea; /* pale pink bg */
+  --color-cream: #fff3f8;       /* warm pale-pink page background */
+  --color-line: #1a0e17;        /* hairline borders -> now hard black */
+  --color-muted: #7a5266;       /* secondary text */
+
+  /* ---- Type tokens ---- */
+  --font-display: "Space Grotesk", "Helvetica Neue", sans-serif;
+  --font-sans: "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "VT323", "JetBrains Mono", "SF Mono", monospace;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  background-image:
+    radial-gradient(var(--color-lilac-line) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: -11px -11px;
+}
+
+::selection {
+  background-color: var(--color-bloom);
+  color: white;
+}
+
+/* font-mono labels read as pixel/terminal type, bump size+tracking so
+   the chunky VT323 face doesn't look tiny next to the pixel display font */
+.font-mono {
+  letter-spacing: 0.06em;
+  font-size: 1.05em;
+}
+
+/* crisp, un-blurred edges for the pixel logo/art */
+img.pixelated,
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* ---- Y2K "chunky pixel" hard shadow system ----
+   flat offset shadow, no blur — the classic 8-bit/neobrutalist look. */
+.pixel-shadow-sm {
+  box-shadow: 3px 3px 0 0 var(--color-ink);
+}
+.pixel-shadow {
+  box-shadow: 5px 5px 0 0 var(--color-ink);
+}
+.pixel-shadow-lg {
+  box-shadow: 8px 8px 0 0 var(--color-ink);
+}
+.pixel-shadow-pink {
+  box-shadow: 5px 5px 0 0 var(--color-bloom);
+}
+
+/* buttons/links that carry a pixel-shadow get a satisfying "press" on
+   click — shadow retreats and the element sinks into it, like an old
+   skeuomorphic UI button */
+a.pixel-shadow-sm,
+button.pixel-shadow-sm,
+a.pixel-shadow,
+button.pixel-shadow {
+  transition: transform 0.08s steps(2), box-shadow 0.08s steps(2);
+}
+a.pixel-shadow-sm:active,
+button.pixel-shadow-sm:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 0 var(--color-ink);
+}
+a.pixel-shadow:active,
+button.pixel-shadow:active {
+  transform: translate(5px, 5px);
+  box-shadow: 0 0 0 0 var(--color-ink);
+}
+
+/* stepped pixel corners instead of border-radius curves — a little
+   staircase cut on each corner, like scaled-up pixel art */
+.pixel-corners {
+  clip-path: polygon(
+    0 8px, 8px 8px, 8px 0,
+    calc(100% - 8px) 0, calc(100% - 8px) 8px, 100% 8px,
+    100% calc(100% - 8px), calc(100% - 8px) calc(100% - 8px), calc(100% - 8px) 100%,
+    8px 100%, 8px calc(100% - 8px), 0 calc(100% - 8px)
+  );
+}
+
+/* dotted "scanline" strip, for retro dividers/hero backgrounds */
+.pixel-dots {
+  background-image: radial-gradient(currentColor 1.5px, transparent 1.5px);
+  background-size: 8px 8px;
+}
+
+.input {
+  width: 100%;
+  border-radius: 0;
+  border: 2px solid var(--color-ink);
+  background-color: white;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.875rem;
+  outline: none;
+  box-shadow: 3px 3px 0 0 var(--color-ink);
+}
+.input:focus {
+  box-shadow: 3px 3px 0 0 var(--color-bloom);
+}
