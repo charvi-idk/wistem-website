@@ -1,18 +1,16 @@
 import { useState } from "react"
 import { NavLink, Link } from "react-router-dom"
 import logo from "../assets/logo.png"
+import { SU_JOIN_URL } from "../data/mock"
 
 const NAV_ITEMS = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About Us" },
   { to: "/events", label: "Events" },
-  { to: "/calendar", label: "Calendar" },
-  { to: "/opportunities", label: "Opportunities" },
   { to: "/committee", label: "Committee" },
   { to: "/resources", label: "Resources" },
+  { to: "/contact", label: "Contact" },
 ]
-
-const SU_JOIN_URL = "https://www.su.rhul.ac.uk/societies/a-z/18352/"
 
 export function Navbar() {
   const [open, setOpen] = useState(false)

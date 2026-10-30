@@ -1,5 +1,5 @@
 import { Section } from "../components/Section"
-import { milestones } from "../data/mock"
+import { activities, milestones } from "../data/mock"
 
 const VALUES = [
   { title: "Belonging first", description: "You don't need to prove you belong in STEM to join us — you already do." },
@@ -15,12 +15,12 @@ export function About() {
         <Section className="!py-16 md:!py-20">
           <p className="font-mono text-xs uppercase tracking-wide text-bloom mb-3">About us</p>
           <h1 className="font-display font-semibold text-4xl max-w-2xl">
-            Started by five students who wanted better company.
+            A community for women in STEM at Royal Holloway.
           </h1>
           <p className="text-white/70 mt-4 max-w-xl">
-            WiSTEM began as an informal study group and grew into one of the
-            university's largest societies — without ever losing the thing
-            that made it worth joining in the first place.
+            The Women in STEM Society is a student society committed to
+            advancing women in science, technology, engineering, and maths,
+            with a focus on inclusivity, diversity, and professional growth.
           </p>
         </Section>
       </section>
@@ -32,9 +32,9 @@ export function About() {
             classrooms, labs, and lecture theatres — and that can make the
             experience feel lonelier than it needs to be. WiSTEM exists to
             close that gap: a place where you can find people who understand
-            exactly what you're going through, mentors who've already been
-            through it, and opportunities that don't require knowing the
-            right person to hear about them.
+            exactly what you're going through, hear from people already
+            working in STEM, and build the skills and confidence to take
+            your next step.
           </p>
           <p className="text-ink/80 leading-relaxed">
             We're open to any student across engineering, computer science,
@@ -59,7 +59,18 @@ export function About() {
         </Section>
       </section>
 
-      <Section eyebrow="Our story" title="How we've grown">
+      <Section eyebrow="What we do" title="How we spend our time">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {activities.map((a) => (
+            <div key={a.title} className="rounded-2xl border border-line bg-white p-5">
+              <h3 className="font-display font-semibold">{a.title}</h3>
+              <p className="text-sm text-muted mt-2">{a.description}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <Section eyebrow="Our story" title="Moments from our story">
         <ol className="relative border-l border-line ml-2 space-y-10">
           {milestones.map((m) => (
             <li key={m.year} className="ml-8">

@@ -6,10 +6,13 @@ import type {
   Milestone,
 } from "../types"
 
-// Everything below is placeholder content, kept in one file so it's easy
-// to find and swap for the real thing. Dates, categories, and counts are
-// left realistic so the calendar/filtering/sorting features work out of
-// the box — replace the titles, descriptions, and links first.
+// All of the site's content lives in this file. Only add details that have
+// been confirmed — pages show a friendly empty state when a list is empty.
+
+export const SU_JOIN_URL = "https://www.su.rhul.ac.uk/societies/a-z/18352/"
+export const INSTAGRAM_URL = "https://www.instagram.com/rhulwistem/"
+export const INSTAGRAM_HANDLE = "@rhulwistem"
+export const CONTACT_EMAIL = "womeninstem@royalholloway.su"
 
 export const CATEGORY_COLOR: Record<string, string> = {
   Academic: "var(--color-pink)",
@@ -20,202 +23,40 @@ export const CATEGORY_COLOR: Record<string, string> = {
   Hackathon: "#3E8C6A",
 }
 
-export const events: WistemEvent[] = [
-  {
-    id: "ev1",
-    title: "Add event 1",
-    date: "2026-09-16",
-    time: "Add time",
-    location: "Add location",
-    category: "Social",
-    description: "Add a short description for this event.",
-    longDescription: "Add the full event description here.",
-    organiser: "Add organiser",
-    capacity: 500,
-    rsvpCount: 0,
-    color: CATEGORY_COLOR.Social,
-  },
-  {
-    id: "ev2",
-    title: "Add event 2",
-    date: "2026-09-24",
-    time: "Add time",
-    location: "Add location",
-    category: "Workshop",
-    description: "Add a short description for this event.",
-    longDescription: "Add the full event description here.",
-    organiser: "Add organiser",
-    capacity: 40,
-    rsvpCount: 0,
-    color: CATEGORY_COLOR.Workshop,
-  },
-  {
-    id: "ev3",
-    title: "Add event 3",
-    date: "2026-10-08",
-    time: "Add time",
-    location: "Add location",
-    category: "Careers",
-    description: "Add a short description for this event.",
-    longDescription: "Add the full event description here.",
-    organiser: "Add organiser",
-    capacity: 120,
-    rsvpCount: 0,
-    color: CATEGORY_COLOR.Careers,
-  },
-  {
-    id: "ev4",
-    title: "Add event 4",
-    date: "2026-10-03",
-    time: "Add time",
-    location: "Add location",
-    category: "Academic",
-    description: "Add a short description for this event.",
-    longDescription: "Add the full event description here.",
-    organiser: "Add organiser",
-    capacity: 1000,
-    rsvpCount: 0,
-    color: CATEGORY_COLOR.Academic,
-  },
-  {
-    id: "ev5",
-    title: "Add event 5",
-    date: "2026-11-12",
-    time: "Add time",
-    location: "Add location",
-    category: "Networking",
-    description: "Add a short description for this event.",
-    longDescription: "Add the full event description here.",
-    organiser: "Add organiser",
-    capacity: 80,
-    rsvpCount: 0,
-    color: CATEGORY_COLOR.Networking,
-  },
-  {
-    id: "ev6",
-    title: "Add event 6",
-    date: "2026-11-21",
-    time: "Add time",
-    location: "Add location",
-    category: "Hackathon",
-    description: "Add a short description for this event.",
-    longDescription: "Add the full event description here.",
-    organiser: "Add organiser",
-    capacity: 100,
-    rsvpCount: 0,
-    color: CATEGORY_COLOR.Hackathon,
-  },
-  {
-    id: "ev7",
-    title: "Add event 7",
-    date: "2026-12-04",
-    time: "Add time",
-    location: "Add location",
-    category: "Social",
-    description: "Add a short description for this event.",
-    longDescription: "Add the full event description here.",
-    organiser: "Add organiser",
-    capacity: 60,
-    rsvpCount: 0,
-    color: CATEGORY_COLOR.Social,
-  },
-  {
-    id: "ev8",
-    title: "Add event 8",
-    date: "2027-01-22",
-    time: "Add time",
-    location: "Add location",
-    category: "Careers",
-    description: "Add a short description for this event.",
-    longDescription: "Add the full event description here.",
-    organiser: "Add organiser",
-    capacity: 50,
-    rsvpCount: 0,
-    color: CATEGORY_COLOR.Careers,
-  },
-  {
-    id: "ev9",
-    title: "Add event 9",
-    date: "2027-03-05",
-    time: "Add time",
-    location: "Add location",
-    category: "Academic",
-    description: "Add a short description for this event.",
-    longDescription: "Add the full event description here.",
-    organiser: "Add organiser",
-    capacity: 30,
-    rsvpCount: 0,
-    color: CATEGORY_COLOR.Academic,
-  },
-  {
-    id: "ev10",
-    title: "Add event 10",
-    date: "2027-05-20",
-    time: "Add time",
-    location: "Add location",
-    category: "Academic",
-    description: "Add a short description for this event.",
-    longDescription: "Add the full event description here.",
-    organiser: "Add organiser",
-    capacity: 200,
-    rsvpCount: 0,
-    color: CATEGORY_COLOR.Academic,
-  },
-]
+export const events: WistemEvent[] = []
 
-export const opportunities: Opportunity[] = [
-  { id: "op1", organisation: "Add organisation", title: "Add opportunity 1", location: "Add location", deadline: "2026-09-30", category: "Internship", description: "Add a short description.", applyUrl: "#" },
-  { id: "op2", organisation: "Add organisation", title: "Add opportunity 2", location: "Add location", deadline: "2026-10-05", category: "Internship", description: "Add a short description.", applyUrl: "#" },
-  { id: "op3", organisation: "Add organisation", title: "Add opportunity 3", location: "Add location", deadline: "2026-11-14", category: "Graduate Scheme", description: "Add a short description.", applyUrl: "#" },
-  { id: "op4", organisation: "Add organisation", title: "Add opportunity 4", location: "Add location", deadline: "2026-10-20", category: "Spring Week", description: "Add a short description.", applyUrl: "#" },
-  { id: "op5", organisation: "Add organisation", title: "Add opportunity 5", location: "Add location", deadline: "2026-10-31", category: "Scholarship", description: "Add a short description.", applyUrl: "#" },
-  { id: "op6", organisation: "Add organisation", title: "Add opportunity 6", location: "Add location", deadline: "2026-11-21", category: "Hackathon", description: "Add a short description.", applyUrl: "#" },
-  { id: "op7", organisation: "Add organisation", title: "Add opportunity 7", location: "Add location", deadline: "2026-12-01", category: "Mentoring", description: "Add a short description.", applyUrl: "#" },
-  { id: "op8", organisation: "Add organisation", title: "Add opportunity 8", location: "Add location", deadline: "2026-09-28", category: "Competition", description: "Add a short description.", applyUrl: "#" },
-  { id: "op9", organisation: "Add organisation", title: "Add opportunity 9", location: "Add location", deadline: "2027-01-15", category: "Internship", description: "Add a short description.", applyUrl: "#" },
-]
+export const opportunities: Opportunity[] = []
 
 export const committee: CommitteeMember[] = [
-  { id: "cm1", name: "Add name", role: "President", subject: "Add course & year", bio: "Add a short bio.", funFact: "Add a fun fact.", linkedin: "#", instagram: "#", initials: "?" },
-  { id: "cm2", name: "Add name", role: "Vice President", subject: "Add course & year", bio: "Add a short bio.", funFact: "Add a fun fact.", linkedin: "#", instagram: "#", initials: "?" },
-  { id: "cm3", name: "Add name", role: "Secretary", subject: "Add course & year", bio: "Add a short bio.", funFact: "Add a fun fact.", linkedin: "#", instagram: "#", initials: "?" },
-  { id: "cm4", name: "Add name", role: "Treasurer", subject: "Add course & year", bio: "Add a short bio.", funFact: "Add a fun fact.", linkedin: "#", instagram: "#", initials: "?" },
-  { id: "cm5", name: "Add name", role: "Events", subject: "Add course & year", bio: "Add a short bio.", funFact: "Add a fun fact.", linkedin: "#", instagram: "#", initials: "?" },
-  { id: "cm6", name: "Add name", role: "Social Media", subject: "Add course & year", bio: "Add a short bio.", funFact: "Add a fun fact.", linkedin: "#", instagram: "#", initials: "?" },
+  { id: "cm1", name: "Charvi Patel", role: "President", initials: "CP" },
+  { id: "cm2", name: "Ella Baddeley", role: "Vice President", initials: "EB" },
 ]
 
 export const resources: Resource[] = [
-  { id: "r1", title: "Add resource 1", group: "Careers", description: "Add a short description.", url: "#" },
-  { id: "r2", title: "Add resource 2", group: "Careers", description: "Add a short description.", url: "#" },
-  { id: "r3", title: "Add resource 3", group: "Careers", description: "Add a short description.", url: "#" },
-  { id: "r4", title: "Add resource 4", group: "Learning", description: "Add a short description.", url: "#" },
-  { id: "r5", title: "Add resource 5", group: "Learning", description: "Add a short description.", url: "#" },
-  { id: "r6", title: "Add resource 6", group: "Learning", description: "Add a short description.", url: "#" },
-  { id: "r7", title: "Add resource 7", group: "University", description: "Add a short description.", url: "#" },
-  { id: "r8", title: "Add resource 8", group: "University", description: "Add a short description.", url: "#" },
-  { id: "r9", title: "Add resource 9", group: "University", description: "Add a short description.", url: "#" },
-  { id: "r10", title: "Add resource 10", group: "Wellbeing", description: "Add a short description.", url: "#" },
-  { id: "r11", title: "Add resource 11", group: "Wellbeing", description: "Add a short description.", url: "#" },
-  { id: "r12", title: "Add resource 12", group: "Wellbeing", description: "Add a short description.", url: "#" },
+  { id: "r1", title: "STEM Women", group: "Careers", description: "Careers events and advice connecting women and non-binary STEM students with employers.", url: "https://www.stemwomen.com/" },
+  { id: "r2", title: "Prospects", group: "Careers", description: "UK graduate jobs, plus guidance on CVs, applications, and interviews.", url: "https://www.prospects.ac.uk/" },
+  { id: "r3", title: "Women's Engineering Society", group: "Careers", description: "A UK charity supporting women in engineering, science, and technology.", url: "https://www.wes.org.uk/" },
+  { id: "r4", title: "BCS, The Chartered Institute for IT", group: "Careers", description: "The UK's professional body for people working in computing and IT.", url: "https://www.bcs.org/" },
+  { id: "r5", title: "Code First Girls", group: "Learning", description: "Free coding courses and community for women and non-binary people.", url: "https://www.codefirstgirls.com/" },
+  { id: "r6", title: "Khan Academy", group: "Learning", description: "Free lessons in maths, science, and computing.", url: "https://www.khanacademy.org/" },
+  { id: "r7", title: "freeCodeCamp", group: "Learning", description: "Free, self-paced programming courses and certifications.", url: "https://www.freecodecamp.org/" },
+  { id: "r8", title: "MIT OpenCourseWare", group: "Learning", description: "Free lecture notes, exams, and videos from MIT courses.", url: "https://ocw.mit.edu/" },
+  { id: "r9", title: "Royal Holloway student pages", group: "University", description: "The university's hub for current students.", url: "https://www.royalholloway.ac.uk/students/" },
+  { id: "r10", title: "Royal Holloway Students' Union", group: "University", description: "Societies, events, and everything else run by your SU.", url: "https://www.su.rhul.ac.uk/" },
+  { id: "r11", title: "SU Advice", group: "University", description: "Advice and support from the Students' Union.", url: "https://www.su.rhul.ac.uk/advice/" },
+  { id: "r12", title: "Student Minds", group: "Wellbeing", description: "The UK's student mental health charity.", url: "https://www.studentminds.org.uk/" },
+  { id: "r13", title: "NHS mental health services", group: "Wellbeing", description: "How to find and access NHS mental health support.", url: "https://www.nhs.uk/nhs-services/mental-health-services/" },
+  { id: "r14", title: "Samaritans", group: "Wellbeing", description: "Someone to talk to, day or night. Call 116 123 for free.", url: "https://www.samaritans.org/" },
+]
+
+export const activities = [
+  { title: "Speaker series", description: "Hear from people working in STEM about their careers and how they got there." },
+  { title: "Professional development", description: "Build your confidence and network with sessions aimed at life after university." },
+  { title: "Skill-building", description: "Hands-on activities to help you pick up new technical and practical skills." },
+  { title: "Community outreach", description: "Share STEM with young people locally through activities like building robots and learning to code." },
+  { title: "Socials", description: "Time to relax and get to know each other, with activities like bracelet making." },
 ]
 
 export const milestones: Milestone[] = [
-  { year: "Add year", title: "Add milestone 1", description: "Add a short description." },
-  { year: "Add year", title: "Add milestone 2", description: "Add a short description." },
-  { year: "Add year", title: "Add milestone 3", description: "Add a short description." },
-  { year: "Add year", title: "Add milestone 4", description: "Add a short description." },
-  { year: "Add year", title: "Add milestone 5", description: "Add a short description." },
-]
-
-export const stats = {
-  members: 0,
-  eventsHosted: 0,
-  partnerships: 0,
-}
-
-export const instagramPosts = [
-  { id: "ig1", caption: "Add caption for post 1", likes: 0 },
-  { id: "ig2", caption: "Add caption for post 2", likes: 0 },
-  { id: "ig3", caption: "Add caption for post 3", likes: 0 },
-  { id: "ig4", caption: "Add caption for post 4", likes: 0 },
+  { year: "2023", title: "Building robots with local pupils", description: "We visited a local primary school with STEAMSTARS and helped pupils build Arduino robots." },
 ]

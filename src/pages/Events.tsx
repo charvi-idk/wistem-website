@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react"
 import { Section } from "../components/Section"
 import { EventCard } from "../components/EventCard"
-import { events } from "../data/mock"
+import { activities, events, INSTAGRAM_HANDLE, INSTAGRAM_URL } from "../data/mock"
 import type { EventCategory } from "../types"
 
 const CATEGORIES: EventCategory[] = [
@@ -23,6 +23,31 @@ export function Events() {
       .filter((e) => e.title.toLowerCase().includes(query.toLowerCase()))
       .sort((a, b) => a.date.localeCompare(b.date))
   }, [query, category])
+
+  if (events.length === 0) {
+    return (
+      <Section eyebrow="Events" title="What we get up to" description="Talks, skill-building, outreach, socials, and everything in between.">
+        <div className="rounded-2xl bg-lilac/50 border border-lilac-line p-6 mb-8">
+          <p className="font-display font-semibold">No dates listed here right now.</p>
+          <p className="text-sm text-muted mt-1">
+            Follow{" "}
+            <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="text-iris hover:text-iris-dark">
+              {INSTAGRAM_HANDLE}
+            </a>{" "}
+            on Instagram for the latest from the society.
+          </p>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {activities.map((a) => (
+            <div key={a.title} className="rounded-2xl border border-line bg-white p-5">
+              <h3 className="font-display font-semibold">{a.title}</h3>
+              <p className="text-sm text-muted mt-2">{a.description}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+    )
+  }
 
   return (
     <div>
