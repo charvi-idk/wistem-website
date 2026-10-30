@@ -22,7 +22,7 @@ export function CommitteePage() {
     <Section
       eyebrow="Committee"
       title="Meet the people behind WiSTEM"
-      description="Every one of them started as a member, just like you."
+      description="The students running the Women in STEM Society at Royal Holloway."
     >
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {SECTIONS.map((section) => {
@@ -41,9 +41,9 @@ export function CommitteePage() {
               <div className="p-5">
                 <p className="font-mono text-xs uppercase tracking-wide text-bloom">{member.role}</p>
                 <h3 className="font-display font-semibold text-lg mt-1">{member.name}</h3>
-                <p className="text-xs text-muted">{member.subject}</p>
-                <p className="text-sm text-ink/80 mt-3">{member.bio}</p>
-                <p className="text-xs text-muted mt-3 italic">✨ {member.funFact}</p>
+                {member.subject && <p className="text-xs text-muted">{member.subject}</p>}
+                {member.bio && <p className="text-sm text-ink/80 mt-3">{member.bio}</p>}
+                {member.funFact && <p className="text-xs text-muted mt-3 italic">✨ {member.funFact}</p>}
                 <div className="flex gap-3 mt-4">
                   {member.linkedin && (
                     <a href={member.linkedin} className="text-xs font-medium text-iris hover:text-iris-dark">

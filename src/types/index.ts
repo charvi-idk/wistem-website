@@ -57,9 +57,9 @@ export interface CommitteeMember {
   id: string
   name: string
   role: CommitteeSection
-  subject: string
-  bio: string
-  funFact: string
+  subject?: string
+  bio?: string
+  funFact?: string
   linkedin?: string
   instagram?: string
   initials: string

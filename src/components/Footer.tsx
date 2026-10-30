@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
-import { NewsletterForm } from "./NewsletterForm"
 import logo from "../assets/logo.png"
+import { CONTACT_EMAIL, INSTAGRAM_HANDLE, INSTAGRAM_URL } from "../data/mock"
 
 export function Footer() {
   return (
@@ -16,7 +16,7 @@ export function Footer() {
             <span className="font-display font-semibold text-lg">WiSTEM</span>
           </div>
           <p className="text-sm text-white/60 max-w-xs">
-            A student-run society empowering women and non-binary students in STEM, one event at a time.
+            The Women in STEM Society at Royal Holloway, University of London. Student-run and open to all.
           </p>
         </div>
 
@@ -25,8 +25,6 @@ export function Footer() {
             <p className="font-mono text-xs uppercase tracking-wide text-white/40 mb-3">Explore</p>
             <ul className="space-y-2">
               <li><Link to="/events" className="hover:text-white">Events</Link></li>
-              <li><Link to="/calendar" className="hover:text-white">Calendar</Link></li>
-              <li><Link to="/opportunities" className="hover:text-white">Opportunities</Link></li>
               <li><Link to="/resources" className="hover:text-white">Resources</Link></li>
             </ul>
           </div>
@@ -45,7 +43,10 @@ export function Footer() {
           <p className="font-mono text-xs uppercase tracking-wide text-white/40 mb-3">
             Stay in the loop
           </p>
-          <NewsletterForm dark />
+          <ul className="space-y-2 text-sm">
+            <li><a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="hover:text-white">{INSTAGRAM_HANDLE} on Instagram</a></li>
+            <li><a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-white break-all">{CONTACT_EMAIL}</a></li>
+          </ul>
         </div>
       </div>
 
